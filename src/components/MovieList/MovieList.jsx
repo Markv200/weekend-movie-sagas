@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './MovieList.css';
 
 function MovieList() {
@@ -19,7 +20,9 @@ function MovieList() {
           return (
             <div data-testid='movieItem' key={movie.id}>
               <h3>{movie.title}</h3>
+              <Link to={`/details/${movie.id}`} data-testid="toDetails">
               <img src={movie.poster} alt={movie.title}/>
+              </Link>
             </div>
           );
         })}
@@ -29,3 +32,8 @@ function MovieList() {
 }
 
 export default MovieList;
+
+
+
+
+
